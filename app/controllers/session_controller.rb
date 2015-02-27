@@ -11,7 +11,7 @@ class SessionController < ApplicationController
     provider = Provider.find_by(email: params[:email])
     if provider && provider.authenticate(params[:password])
       session[:provider_id] = provider.id
-      redirect_to session[:page_id]
+      redirect_to '/'
     else
       render :new
     end

@@ -1,0 +1,30 @@
+<form action="/session" class="form-horizontal" method="POST">
+	<fieldset>
+  	<legend>Sign in</legend>
+	<div class="control-group">
+	<label for="email" class="controls">
+		Email
+	</label>
+
+	</div>
+	<div class="controls">
+	<input type="text" name="email">
+
+	</div>
+	<div class="control-group">
+<label for="password" class="controls">
+		Password
+</label>
+</div>
+<div class="controls">
+<input type="password" name="password">
+
+</div>
+<input type="hidden" name="authenticity_token" value = "<%= form_authenticity_token()  %>">
+<br>
+<button class= "btn btn-default btn-sm">Sign In</button>
+
+</form>
+
+
+

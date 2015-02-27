@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+provider1 = Provider.create(
+	name: "Sharon Chu",
+	password_digest: "123",
+	email: "sharon@gmail.com",
+	trelloName: "daviddaniel6")

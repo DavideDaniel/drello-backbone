@@ -1,0 +1,13 @@
+<nav>
+    <div class="nav-wrapper blue">
+      <a href="#" class="brand-logo left">dr+ello</a>
+      <% if @provider  %>
+    <% else %>
+      <ul id="nav-mobile" class="right">
+      <li><%= link_to 'Sign Up', signup_path, method: :get %> </li>
+            <li><%= link_to 'Sign In', login_path, method: :get %></li>
+      <% end %>
+
+      </ul>
+    </div>
+  </nav>

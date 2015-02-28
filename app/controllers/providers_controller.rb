@@ -5,8 +5,8 @@ class ProvidersController < ApplicationController
 
   def create
     if params[:password] == params[:confirm_password]
-      @provider = Provider.create(params_user)
-      redirect_to '/'
+      @provider = Provider.create(params_provider)
+      redirect_to '/providers'
 
     else
       redirect_to '/signup'
@@ -21,7 +21,7 @@ class ProvidersController < ApplicationController
     @provider = Provider.find_by(id: params[:id])
   end
 
-  def params_user
+  def params_provider
     params.require(:provider).permit(:name, :password, :email)
   end
 end

@@ -1,6 +1,7 @@
 class Provider < ActiveRecord::Base
   has_many :consumers
   has_many :boards
+  has_many :cards
   has_secure_password
 
   validates_uniqueness_of :email

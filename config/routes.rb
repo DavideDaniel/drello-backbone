@@ -6,17 +6,15 @@ Rails.application.routes.draw do
   post '/signup' => 'providers#create'
   post '/session' => 'session#create'
   delete '/session' => 'session#destroy'
-  get '/secret' => 'secret#show'
 
-  
-  resources :providers do
-    resources :consumers do
-      resources :boards do
-        resources :cards
-    end
+  resources :providers, shallow: true do
+    resources :boards, :controller => 'Providers_Boards', :only => [:index, :create, :destroy]
+    resources :cards
   end
-end
 
+  resources :consumers do
+    resources :boards, :controller => 'Consumers_Boards', :only => [:index, :show] 
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

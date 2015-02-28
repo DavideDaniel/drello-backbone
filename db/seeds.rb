@@ -11,3 +11,9 @@ provider1 = Provider.create(
 	password_digest: "123",
 	email: "sharon@gmail.com",
 	trelloName: "daviddaniel6")
+
+consumer1 = Consumer.create(
+	name: "Jason Ng",
+	password_digest: "123",
+	email: "jason@gmail.com",
+	provider: "Sharon Chu")

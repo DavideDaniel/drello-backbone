@@ -1,8 +1,7 @@
 class MainController < ApplicationController
 
-def index
+  def index
     session[:page_id] = '/'
-
   end
 
 end

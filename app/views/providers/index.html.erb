@@ -1,1 +1,6 @@
-You're in the index
+These are the current providers
+<ul>
+<% @providers.each do |provider|   %>
+<li><%= provider.name %></li>
+<% end  %>
+</ul>

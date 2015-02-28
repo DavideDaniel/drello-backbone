@@ -1,5 +1,5 @@
 class Consumer < ActiveRecord::Base
-	belongs_to :provider
+	has_one :provider
 	has_many :boards
 
 	has_secure_password

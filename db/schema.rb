@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 20150228202315) do
     t.text     "name"
     t.text     "email"
     t.text     "password_digest"
-    t.text     "provider"
     t.integer  "provider_id"
   end
 

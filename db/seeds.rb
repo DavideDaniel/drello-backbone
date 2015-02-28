@@ -6,15 +6,21 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-provider1 = Provider.create(
+Provider.create(
 	name: "Sharon Chu",
-	password_digest: "123",
+	password: "123",
 	email: "sharon@gmail.com",
 	trelloName: "daviddaniel6")
 
-consumer1 = Consumer.create(
+Consumer.create(
 	name: "Jason Ng",
-	password_digest: "123",
+	password: "123",
 	email: "jason@gmail.com",
+	provider_id: 1)
+
+Consumer.create(
+	name: "Alex Deschamps",
+	password: "123",
+	email: "alex@gmail.com",
 	provider_id: 1)
 

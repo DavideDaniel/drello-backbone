@@ -17,10 +17,19 @@ class ProvidersController < ApplicationController
     @providers = Provider.all
   end
 
-  def show
+
+  def dash
     @provider = Provider.find_by(id: params[:id])
-    @consumers = Consumer.find_by(provider_id: params[:provider_id])
   end
+
+  def show
+
+    @provider = Provider.find_by(id: params[:id])
+    @consumers = Consumer.where(provider_id: params[:id])
+
+  end
+
+
 
   def params_provider
     params.require(:provider).permit(:name, :password, :email)

@@ -19,6 +19,7 @@ class ProvidersController < ApplicationController
 
   def show
     @provider = Provider.find_by(id: params[:id])
+    @consumers = Consumer.find_by(provider_id: params[:provider_id])
   end
 
   def params_provider

@@ -8,12 +8,12 @@ Rails.application.routes.draw do
   delete '/session' => 'session#destroy'
 
   resources :providers, shallow: true do
-    resources :boards, :controller => 'Providers_Boards', :only => [:index, :create, :destroy]
+    resources :boards
     resources :cards
   end
 
   resources :consumers do
-    resources :boards, :controller => 'Consumers_Boards', :only => [:index, :show] 
+    resources :boards
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

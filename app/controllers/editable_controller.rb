@@ -1,0 +1,2 @@
+class EditableController < ApplicationController
+end

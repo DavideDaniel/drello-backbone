@@ -16,4 +16,5 @@ consumer1 = Consumer.create(
 	name: "Jason Ng",
 	password_digest: "123",
 	email: "jason@gmail.com",
-	provider: "Sharon Chu")
+	provider_id: 1)
+

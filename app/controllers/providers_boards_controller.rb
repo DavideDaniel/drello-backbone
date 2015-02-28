@@ -1,2 +1,0 @@
-class ProvidersBoardsController < ApplicationController
-end

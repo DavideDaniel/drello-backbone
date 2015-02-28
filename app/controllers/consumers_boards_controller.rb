@@ -1,2 +1,0 @@
-class ConsumersBoardsController < ApplicationController
-end

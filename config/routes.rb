@@ -12,8 +12,8 @@ Rails.application.routes.draw do
     resources :cards
   end
 
-  resources :consumers do
-    resources :boards
+  resources :boards do
+    resources :cards
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

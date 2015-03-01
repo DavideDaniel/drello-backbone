@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150301044511) do
+ActiveRecord::Schema.define(version: 20150301083829) do
 
   create_table "boards", force: :cascade do |t|
     t.datetime "created_at",  null: false
@@ -30,15 +30,18 @@ ActiveRecord::Schema.define(version: 20150301044511) do
   end
 
   create_table "consumers", force: :cascade do |t|
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.text     "name"
     t.text     "email"
     t.text     "password_digest"
     t.integer  "provider_id"
     t.date     "birthday"
     t.integer  "gender_cd"
+    t.string   "issues",          default: "{}"
   end
+
+  add_index "consumers", ["issues"], name: "index_consumers_on_issues"
 
   create_table "providers", force: :cascade do |t|
     t.string   "name"

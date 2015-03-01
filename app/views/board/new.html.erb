@@ -1,2 +1,14 @@
 <h1>Board#new</h1>
 <p>Find me in app/views/board/new.html.erb</p>
+<% if @provider %>
+<%= form_for @new_board do |f| %>
+	<%= f.hidden_field :provider_id, value: @provider.id%>
+	<%= f.hidden_field :provider_id, value: @new_board.provider_id %>
+	<%= f.hidden_field :board_id, value: @board.id %>
+	
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+
+	<%= f.submit 'Submit' %>
+<% end %>
+<% end %>

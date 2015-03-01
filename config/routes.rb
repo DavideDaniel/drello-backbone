@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :boards
     resources :cards
   end
+  
+  resources :consumers
 
   resources :boards do
     resources :cards

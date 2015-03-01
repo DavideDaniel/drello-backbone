@@ -1,11 +1,6 @@
 class Card < ActiveRecord::Base
-  belongs_to :provider
   belongs_to :board
+  has_many :issues, dependent: :destroy
 
-  def to_builder
-    Jbuilder.new do |card|
-      card.(self, :name, :url)
-    end
-  end
-
+  default_scope { order(:ord) }
 end

@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
-gem 'pry'
+
 # gem 'ruby-trello'
+gem 'backbone-on-rails'
+
 gem 'materialize-sass'
 gem 'best_in_place', github: 'bernat/best_in_place'
 gem 'responders', '~>2.0'
@@ -38,6 +40,9 @@ gem 'unicorn'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'pry'
+  # ERD goodness!
+  gem 'rails-erd'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -47,4 +52,3 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'pry'
-gem 'ruby-trello'
+# gem 'ruby-trello'
 gem 'materialize-sass'
 gem 'best_in_place', github: 'bernat/best_in_place'
 gem 'responders', '~>2.0'

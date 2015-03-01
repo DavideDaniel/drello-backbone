@@ -21,7 +21,9 @@ These are your consumers
 Add boards here:
 
 <input type="text" action="POST">
-
+<div class='draggable'></div>
+<input type='button' class='content' value='go'/>
+<div class='empty'></div>
 
    <div class="row">
         <div class="col s6 m4">
@@ -31,7 +33,7 @@ Add boards here:
 
               <div class="row">
       <div class="col s1 m12">
-        <div class="card-panel white">
+        <div class="draggable card-panel white">
           <span class="grey-text">I am a very simple card. I am good at containing small bits of information.
           I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
           </span>
@@ -66,5 +68,36 @@ $(document).ready(function(){
     belowOrigin: true // Displays dropdown below the button
     }
 );
-    })
+
+
+    $( ".draggable" ).draggable();
+    $('.content').click(function(){
+        var htmlData='<div class="row">
+        <div class="col s6 m4">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title"><%= best_in_place @board, :title  %> draggable list</span>
+				
+              <div class="row">
+      <div class="col s1 m12">
+        <div class="draggable card-panel white">
+          <span class="grey-text">Draggable card
+          </span>
+        <div class="card-action">
+              <a href="#">Helpful</a>
+            </div>
+        </div>
+
+      </div>
+
+    </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>';
+        $('.empty').append(htmlData);
+        $( ".draggable" ).draggable();
+        });
+   });
 </script>

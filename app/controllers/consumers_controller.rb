@@ -45,6 +45,8 @@ class ConsumersController < ApplicationController
     @consumer = Consumer.find_by(id: params[:id])
   end
 
+  
+
   def destroy
     @consumer = Consumer.find_by(id: params[:id])
 

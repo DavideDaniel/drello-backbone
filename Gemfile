@@ -5,6 +5,8 @@ gem 'materialize-sass'
 gem 'best_in_place', github: 'bernat/best_in_place'
 gem 'responders', '~>2.0'
 gem 'simple_enum'
+gem 'ember-rails'
+gem 'ember-source', '~> 1.9.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record

@@ -4,10 +4,37 @@ These are your consumers
 
 <ul>
 <% @consumers.each do |consumer|   %>
-<li><%= consumer.name %></li>
+<!-- Dropdown Trigger -->
+  <a class='dropdown-button btn' href='#' data-activates='dropdown<%=consumer.id%>'><%= consumer.name  %></a>
+  <!-- Dropdown Structure -->
+  <ul id='dropdown<%=consumer.id%>' class='dropdown-content'>
+    <li><%= link_to 'Show', consumer_path(consumer) %></li>
+    <li class="divider"></li>
+    <li><%= link_to 'Edit', edit_consumer_path(consumer) %></li>
+    <li class="divider"></li>
+    <li><%= link_to 'Delete', edit_consumer_path(consumer) %></li>
+  </ul>
+  <br>
 <% end  %>
 </ul>
 
 Add consumers here:
 
 <input type="text" action="POST">
+
+  
+
+<script>
+$(document).ready(function(){
+    $('.dropdown-button').dropdown({
+    inDuration: 300,
+    outDuration: 225,
+    constrain_width: true, // Does not change width of dropdown to that of the activator
+    hover: false, // Activate on click
+    alignment: 'left', // Aligns dropdown to left or right edge (works with constrain_width)
+    gutter: 0, // Spacing from edge
+    belowOrigin: true // Displays dropdown below the button
+    }
+);
+    })
+</script>

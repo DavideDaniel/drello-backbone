@@ -17,6 +17,17 @@ class ConsumersController < ApplicationController
     @consumers = Consumer.all
   end
 
+  def edit
+    @consumer = Consumer.find_by(id: params[:id])
+  end
+  
+  def update
+    @consumer = Consumer.find_by(id: params[:id])
+    @consumer.update_attributes(params_consumer)
+
+    redirect_to provider_show_path
+  end
+
   def show
     @consumer = Consumer.find_by(id: params[:id])
 

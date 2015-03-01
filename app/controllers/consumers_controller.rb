@@ -1,7 +1,8 @@
 class ConsumersController < ApplicationController
+  respond_to :html, :json
+
   def new
     @consumer = Consumer.new
-
   end
 
   def create
@@ -21,17 +22,18 @@ class ConsumersController < ApplicationController
   def edit
     @consumer = Consumer.find_by(id: params[:id])
   end
-  
+
   def update
     @consumer = Consumer.find_by(id: params[:id])
-    @consumer.update_attributes(params_consumer)
-
-    redirect_to provider_show_path
+    if @consumer.update_attributes(params_consumer)
+      respond_with @consumer, notice: "Success"
+    else
+      render :edit
+    end
   end
 
   def show
     @consumer = Consumer.find_by(id: params[:id])
-
   end
 
   def params_consumer

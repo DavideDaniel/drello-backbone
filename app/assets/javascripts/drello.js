@@ -1,8 +1,14 @@
-//= require underscore
-//= require backbone
-//= require rails_drello
-//= require_tree ../templates
-//= require_tree ./models
-//= require_tree ./collections
-//= require_tree ./views
-//= require_tree ./routers
+window.Drello = {
+  Models: {},
+  Collections: {},
+  Views: {},
+  Routers: {},
+  initialize: function() {
+    alert('Hello from Drello!');
+  }
+};
+
+$(document).ready(function(){
+  Drello.initialize();
+});
+

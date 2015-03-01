@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150301083829) do
+ActiveRecord::Schema.define(version: 20150301212931) do
 
   create_table "boards", force: :cascade do |t|
     t.datetime "created_at",  null: false
@@ -43,6 +43,16 @@ ActiveRecord::Schema.define(version: 20150301083829) do
 
   add_index "consumers", ["issues"], name: "index_consumers_on_issues"
 
+  create_table "issues", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "providers", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -50,6 +60,11 @@ ActiveRecord::Schema.define(version: 20150301083829) do
     t.string   "trelloName"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "shared_boards", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

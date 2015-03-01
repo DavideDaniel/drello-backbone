@@ -3,13 +3,13 @@
       <a href="#" class="brand-logo center">dr <i class=" z-depth-1 mdi-maps-local-hospital"></i> ello</a>
       <a href="#" data-activates="mobile-side" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
     <ul class="right hide-on-med-and-down">
-      <li><%= link_to 'Consumer Sign In', login_path, method: :get %></li>
+      <li><%= link_to 'Consumer Sign In', '/consumers/new', method: :get %></li>
       <li><%= link_to 'Provider Sign In', login_path, method: :get %></li>
       <li class="divider"></li>
       <li><%= link_to 'Sign Up', signup_path, method: :get %> </li>
     </ul>
     <ul class="side-nav" id="mobile-side">
-      <li><%= link_to 'Consumer Sign In', login_path, method: :get %></li>
+      <li><%= link_to 'Consumer Sign In', '/consumers/new', method: :get %></li>
       <li><%= link_to 'Provider Sign In', login_path, method: :get %></li>
       <li class="divider"></li>
       <li><%= link_to 'Sign Up', signup_path, method: :get %> </li>

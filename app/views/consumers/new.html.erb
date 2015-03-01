@@ -1,0 +1,50 @@
+
+	<%= form_for @consumer, url: {action: 'create'}, :html => { :class => 'form-horizontal'} do |f| %>
+	<fieldset>
+  	<legend>Register for DrEllo</legend></fieldset>
+
+  	<%= f.collection_select(:provider_id, Provider.all, :id, :name, :include_blank => "Select your provider") %>
+
+
+	<div class="control-group">
+	<%= f.label :name, class: 'control-label' %>
+	
+	<div class="controls">
+	<%= f.text_field :name %>
+	</div>
+	</div>
+
+	<div class="control-group">
+	<%= f.label :password, class: 'control-label' %>
+	<div class="controls">
+	<%= f.text_field :password %>
+	</div>
+	</div>
+	
+  	<div class="control-group">
+  	<%= f.label :email, class: 'control-label' %>
+  	<div class="controls">
+  	<%= email_field(:consumer, :email) %>
+  	</div>
+  	</div>
+	
+	<% f.hidden_field :authenticity_token, value: form_authenticity_token() %> 
+	
+
+	<div class="form-actions">
+	<br>
+	<%= f.submit 'Sign Up', class: 'btn btn-default btn-xs' %>
+	</div>
+<% end %>
+
+<script>
+$(document).ready(function() {
+    $('select').material_select();
+});
+</script>
+
+
+
+
+
+

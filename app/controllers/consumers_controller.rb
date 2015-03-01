@@ -1,15 +1,16 @@
 class ConsumersController < ApplicationController
   def new
     @consumer = Consumer.new
+
   end
 
   def create
     if params[:password] == params[:confirm_password]
       @consumer = Consumer.create(params_consumer)
-      redirect_to '/show'
+      redirect_to @consumer
 
     else
-      redirect_to '/consumer/signup'
+      redirect_to '/consumers/new'
     end
   end
 

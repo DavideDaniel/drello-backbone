@@ -26,6 +26,9 @@ class ProvidersController < ApplicationController
 
     @provider = Provider.find_by(id: params[:id])
     @consumers = Consumer.where(provider_id: params[:id])
+    @boards = Board.where(provider_id: params[:id])
+    @cards = Card.where(provider_id: params[:id])
+
 
   end
 

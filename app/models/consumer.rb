@@ -1,5 +1,5 @@
 class Consumer < ActiveRecord::Base
-  as_enum :gender, :female => 1, :male => 0
+  as_enum :gender, :female => 1, :male => 2
 
   belongs_to :provider
   has_many :boards

@@ -12,7 +12,7 @@ These are your consumers
     <li class="divider"></li>
     <li><%= link_to 'Edit', edit_consumer_path(consumer) %></li>
     <li class="divider"></li>
-    <li><%= link_to 'Delete', edit_consumer_path(consumer) %></li>
+    <li><%= link_to 'Delete', consumer_path(consumer), method: :delete %></li>
   </ul>
   <br>
 <% end  %>

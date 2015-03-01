@@ -1,7 +1,10 @@
 class SessionController < ApplicationController
+
+
   def new
-      render :new
+    render :new
   end
+
 
   def create
     provider = Provider.find_by(email: params[:email])

@@ -21,15 +21,23 @@ class ConsumersController < ApplicationController
 
   def edit
     @consumer = Consumer.find_by(id: params[:id])
-    render :edit
+
+    if session[:provider_id] == @consumer.provider_id
+    else
+      redirect_to '/'
+    end
+
   end
 
   def update
     @consumer = Consumer.find_by(id: params[:id])
     if @consumer.update_attributes(params_consumer)
-      respond_with @consumer, notice: "Success"
+      respond_to do |format|
+        format.html { redirect_to :back}
+        format.json { respond_with_bip(@consumer) }
+      end
     else
-      render :edit
+      render :show
     end
   end
 
@@ -37,7 +45,16 @@ class ConsumersController < ApplicationController
     @consumer = Consumer.find_by(id: params[:id])
   end
 
+  def destroy
+    @consumer = Consumer.find_by(id: params[:id])
+
+    Consumer.destroy(params[:id])
+
+
+    redirect_to provider_path
+  end
+
   def params_consumer
-    params.require(:consumer).permit(:name, :password, :email, :provider_id)
+    params.require(:consumer).permit(:name, :password, :email, :provider_id, :birthday, :gender)
   end
 end

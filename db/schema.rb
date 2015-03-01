@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150228202315) do
+ActiveRecord::Schema.define(version: 20150301044511) do
 
   create_table "boards", force: :cascade do |t|
     t.datetime "created_at",  null: false
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20150228202315) do
     t.text     "email"
     t.text     "password_digest"
     t.integer  "provider_id"
+    t.date     "birthday"
+    t.integer  "gender_cd"
   end
 
   create_table "providers", force: :cascade do |t|

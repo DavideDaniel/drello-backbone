@@ -21,6 +21,7 @@ class ConsumersController < ApplicationController
 
   def edit
     @consumer = Consumer.find_by(id: params[:id])
+    render :edit
   end
 
   def update

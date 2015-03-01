@@ -27,6 +27,20 @@
   	<%= email_field(:consumer, :email) %>
   	</div>
   	</div>
+
+  	<div class="control-group">
+  	<%= f.label :birthday, class: 'control-label' %>
+  	<div class="controls">
+  	<%= date_field(:consumer, :birthday) %>
+  	</div>
+  	</div>
+
+  	<div class="control-group">
+  	<%= f.label :gender, class: 'control-label' %>
+  	<div class="controls">
+  	<%= f.select(:gender_cd, options_for_select(['female', 'male']), :include_blank => "Gender identification") %>
+  	</div>
+  	</div>
 	
 	<% f.hidden_field :authenticity_token, value: form_authenticity_token() %> 
 	

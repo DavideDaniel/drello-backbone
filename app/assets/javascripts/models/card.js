@@ -1,7 +1,7 @@
 Drello.Models.Card = Backbone.Model.extend({
   urlRoot: '/api/cards',
 
-  items: function () {
+  likes: function () {
     if (!this._likes) {
       this._likes = new Drello.Collections.Likes([], { card: this });
     }
@@ -9,9 +9,9 @@ Drello.Models.Card = Backbone.Model.extend({
   },
 
   parse: function (resp) {
-    if (resp.items) {
-      this.items().set(resp.items);
-      delete resp.items;
+    if (resp.likes) {
+      this.likes().set(resp.likes);
+      delete resp.likes;
     }
     return resp;
   }

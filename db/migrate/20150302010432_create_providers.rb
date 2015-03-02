@@ -12,4 +12,3 @@ class CreateProviders < ActiveRecord::Migration
     add_index :providers, :email
   end
 end
-

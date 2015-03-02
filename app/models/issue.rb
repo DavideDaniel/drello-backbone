@@ -1,5 +1,5 @@
 class Issue < ActiveRecord::Base
-  belongs_to :consumer
-  belongs_to :provider
+  belongs_to :list
   belongs_to :card
+  belongs_to :consumer
 end

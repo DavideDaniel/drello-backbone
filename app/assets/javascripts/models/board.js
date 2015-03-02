@@ -1,18 +1,18 @@
 Drello.Models.Board = Backbone.Model.extend({
   urlRoot: 'api/boards',
 
-  cards: function () {
-    if (!this._cards) {
-      this._cards = new Drello.Collections.Cards([], { board: this });
+  lists: function () {
+    if (!this._lists) {
+      this._lists = new Drello.Collections.Lists([], { board: this });
     }
 
-    return this._cards;
+    return this._lists;
   },
 
   parse: function (response) {
-    if (response.cards) {
-      this.cards().set(response.cards, { parse: true });
-      delete response.cards;
+    if (response.lists) {
+      this.lists().set(response.lists, { parse: true });
+      delete response.lists;
     }
 
     return response;

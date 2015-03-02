@@ -4,11 +4,7 @@ window.Drello = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Drello!');
+    new Drello.Routers.Router;
+    Backbone.history.start();
   }
 };
-
-$(document).ready(function(){
-  Drello.initialize();
-});
-

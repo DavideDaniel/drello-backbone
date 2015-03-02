@@ -8,5 +8,8 @@ class CreateProviders < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
+    add_index :providers, :email
   end
 end
+

@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # gem 'ruby-trello'
 gem 'backbone-on-rails'
-
+gem 'pg'
 gem 'materialize-sass'
 gem 'best_in_place', github: 'bernat/best_in_place'
 gem 'responders', '~>2.0'

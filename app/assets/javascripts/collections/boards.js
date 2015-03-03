@@ -18,4 +18,5 @@ getOrFetch: function(id) {
     return board;
 }
 });
+
 Drello.Collections.boards = new Drello.Collections.Boards

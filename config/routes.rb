@@ -11,10 +11,12 @@ Rails.application.routes.draw do
   resources :consumers
 
   namespace :api, defaults: { format: :json } do
-    resources :boards
+    resources :boards, except: [:new, :edit]
     #resources :shared_boards
-    resources :cards
+    resources :lists, only: [:create, :update, :destroy]
     #resources :issues
+    resources :cards, only: [:create, :show, :update, :destroy]
+    resources :likes, only: [:create, :destroy]
   end
 end
 

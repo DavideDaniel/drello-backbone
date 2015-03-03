@@ -3,6 +3,7 @@ window.Drello = {
   Collections: {},
   Views: {},
   Routers: {},
+  Utils: {},
   initialize: function() {
     new Drello.Routers.Router;
     Backbone.history.start();

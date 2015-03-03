@@ -26,25 +26,25 @@ consumer2 = Consumer.create(
   provider_id: 1,
   birthday: '1981/20/10')
 
-b1 = provider1.boards.create(title: 'Workout')
-b2 = provider1.boards.create(title: 'Crossfit')
-b3 = provider1.boards.create(title: 'Bouncy')
+b1 = provider1.boards.create(title: 'Diabetes')
+b2 = provider1.boards.create(title: 'Heart-disease')
+b3 = provider1.boards.create(title: 'Excercise')
 
 l1 = b1.lists.create(title: 'todo')
 l2 = b1.lists.create(title: 'doing')
 l3 = b1.lists.create(title: 'done')
 
-c1 = l3.cards.create(title: 'squats', description: 'feel the burn')
-c2 = l3.cards.create(title: 'pushups', description: 'ooh ouch')
-c3 = l3.cards.create(title: 'situps', description: 'ouchy')
+c1 = l3.cards.create(title: 'eat better', description: 'feel better')
+c2 = l3.cards.create(title: 'excercise', description: 'feel even better')
+c3 = l3.cards.create(title: 'relax', description: 'get rest')
 
-c4 = l1.cards.create(title: 'squats', description: 'feel the burn')
-c5 = l1.cards.create(title: 'pushups', description: 'ooh ouch')
-c6 = l1.cards.create(title: 'situps', description: 'ouchy')
+c4 = l1.cards.create(title: 'eat better', description: 'feel better')
+c5 = l1.cards.create(title: 'excercise', description: 'feel even better')
+c6 = l1.cards.create(title: 'relax', description: 'get rest')
 
-c7 = l2.cards.create(title: 'squats', description: 'feel the burn')
-c8 = l2.cards.create(title: 'pushups', description: 'ooh ouch')
-c9 = l2.cards.create(title: 'situps', description: 'ouchy')
+c7 = l2.cards.create(title: 'eat better', description: 'feel better')
+c8 = l2.cards.create(title: 'excercise', description: 'feel even better')
+c9 = l2.cards.create(title: 'relax', description: 'get rest')
 
 l1 = c1.likes.create(done: false, consumer_id: '1')
 l2 = c3.likes.create(done: true, consumer_id: '1')
